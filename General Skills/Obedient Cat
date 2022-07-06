@@ -1,1 +1,11 @@
-
+Process: Download the file
+Command:wget hyperlink or click the link
+Cat the file
+Command:cat filename
+Process: Download the file .
+Command: wget https://mercury.picoctf.net/static/a5683698ac318b47bd060cb786859f23/flag    or   click the link .
+It will give you a file name "flag".
+Cat the file .
+Command:cat flag
+The flag is:picoCTF{s4n1ty_v3r1f13d_4a2b35fd}
+NB:"cat" is used to print
