@@ -1,0 +1,10 @@
+Process:Download the file 
+Copy the link and run command in webshell as following 
+Command:wget https://mercury.picoctf.net/static/fc1d77192c544314efece5dd309092e3/warm 
+Or click the hyperlink.
+The file will be save name "warm".
+Make it accessible by "chmod +x"
+Command:chmod +x warm
+type ./warm to run the program and follow the instruction.
+To pass -h use command: ./warm -h
+Here you will find the flag.The flag is:picoCTF{b1scu1ts_4nd_gr4vy_6635aa47}
