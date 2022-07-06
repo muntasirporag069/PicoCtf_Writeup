@@ -1,2 +1,3 @@
-process:By using online tool "Cyberchef" and  with ROT13 
-Or else catch the flag by shifting all the characters by 13 to right
+process:By using online tool name "CyberChef" and use the operation "ROT13" for recipe. 
+Or else catch the flag by shifting all the characters by 13 to right.
+The flag is:picoCTF{next_time_I'll_try_2_rounds_of_rot13_hWqFsgzu}
