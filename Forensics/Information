@@ -1,0 +1,10 @@
+Process:Download the file
+Command: wget https://mercury.picoctf.net/static/149ab4b27d16922142a1e8381677d76f/cat.jpg
+The file is saved.Name:cat.jpg
+Explore the metadata.
+Command: exiftool cat.jpg
+Find something unusual in license part
+License:cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9
+Copy that string and solve with "CyberChef" using "magic"
+Congratulation.You've found the flag.
+The flag is :picoCTF{the_m3tadata_1s_modified}
