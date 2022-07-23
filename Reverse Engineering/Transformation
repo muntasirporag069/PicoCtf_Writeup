@@ -4,4 +4,5 @@ Cat the file.
 Command: cat enc
 Copy the output.
 Use "Magic Intensive Mode" in "Cyberchef".
-Congartulation,you 
+Congartulation,you've found the flag.
+The flag:picoCTF{16_bits_inst34d_of_8_e703b486}
