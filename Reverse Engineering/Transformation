@@ -1,0 +1,7 @@
+Process:Download the file.
+Command:wget https://mercury.picoctf.net/static/1d8a5a2779c4dc24999f0358d7a1a786/enc
+Cat the file.
+Command: cat enc
+Copy the output.
+Use "Magic Intensive Mode" in "Cyberchef".
+Congartulation,you 
