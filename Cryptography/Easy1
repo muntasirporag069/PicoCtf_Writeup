@@ -1,0 +1,9 @@
+Given,
+Vigenere Chipertext:UFJKXQZQUNB
+Key:SOLVECRYPTO
+After seeing the table,I have become assured that,this is "Vigenere Chiper".
+Table link:https://jupiter.challenges.picoctf.org/static/1fd21547c154c678d2dab145c29f1d79/table.txt
+For solving this,use online tool.
+Here is the tool link:https://www.dcode.fr/vigenere-cipher
+After the decryption, I get the flag.
+The flag is:picoCTF{CRYPTOISFUN}
