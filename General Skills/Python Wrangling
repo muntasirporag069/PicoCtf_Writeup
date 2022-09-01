@@ -1,0 +1,13 @@
+Process:
+ First download all the file
+ 1.Command:wget https://mercury.picoctf.net/static/2ac2139344d2e734d5d638ac928f1a8d/ende.py
+ A python file will be downloaded.Name:ende.py
+ 2.Command:wget https://mercury.picoctf.net/static/2ac2139344d2e734d5d638ac928f1a8d/pw.txt
+ A text file will be downloaded which contain password to run the python code.Name:pw.txt
+ To see the password,we have to use command:cat pw.txt
+ 3.Command wget https://mercury.picoctf.net/static/2ac2139344d2e734d5d638ac928f1a8d/flag.txt.en
+ A text file will be downloaded which contain the flag but in encryption.Name:flag.txt
+ Now,to run the python code use command:python ende.py -d flag.txt
+ Now ,it'll ask for password.Copy the password and paste here.
+ Congratulation.You've got the flag.
+The flag is:picoCTF{4p0110_1n_7h3_h0us3_68f88f93}
