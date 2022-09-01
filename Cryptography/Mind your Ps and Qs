@@ -1,0 +1,22 @@
+Process:To get the values,download the file.Name:values
+Command:wget https://mercury.picoctf.net/static/bf5e2c8811afb4669f4a6850e097e8aa/values
+After downloading ,use 'cat' to see the content of the file.
+Given,
+From those N,C and E,we come to learn that ,this is a RSA problem.
+Follow this to learn more about RSA.https://www.bing.com/ck/a?!&&p=fb28193b3bbf3217JmltdHM9MTY2MjA0MzM4OSZpZ3VpZD1jYjdjOTkxNS03YWYxLTQ0OGEtYWNkMC03ODUyZWI3OGVmZDUmaW5zaWQ9NTIyNA&ptn=3&hsh=3&fclid=65cf3eed-2a04-11ed-a59b-5a438433ca33&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvUlNBXyhjcnlwdG9zeXN0ZW0p&ntb=1
+ 
+N=631371953793368771804570727896887140714495090919073481680274581226742748040342637
+C=421345306292040663864066688931456845278496274597031632020995583473619804626233684
+E=65537
+To solve the problem,we have to find two value,P and Q,whereas,N=P*Q
+To get the value of P and Q ,use factordb.com
+
+p=1461849912200000206276283741896701133693
+q=431899300006243611356963607089521499045809
+
+Now use RSA calculator to find other requirements.
+Link:https://www.tausquared.net/pages/ctf/rsa.html
+After finding the value,put the values in RSA cipher decoder to get the flag.
+Link:https://www.dcode.fr/chiffre-rsa
+
+Flag:picoCTF{sma11_N_n0_g0od_55304594}
