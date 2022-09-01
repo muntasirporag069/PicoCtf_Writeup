@@ -20,3 +20,32 @@ After finding the value,put the values in RSA cipher decoder to get the flag.
 Link:https://www.dcode.fr/chiffre-rsa
 
 Flag:picoCTF{sma11_N_n0_g0od_55304594}
+
+We can do it in another way:
+By using python, we also can solve the problem.
+
+Python code:
+
+def egcd(a,b):
+    if a==0:
+        return (b,0,1)
+    else:
+        g,y,x = egcd(b%a,a)
+        return (g,x-(b//a)*y,y)
+def modinv(a,m):
+    g,x,y=egcd(a,m)
+    if g!=1:
+        raise Exception('Does not exist')
+    else: 
+        return x%m
+p=1461849912200000206276283741896701133693
+q=431899300006243611356963607089521499045809
+n=p*q
+phi=(p-1)*(q-1)
+e=65537
+d=modinv(e,phi)
+c=421345306292040663864066688931456845278496274597031632020995583473619804626233684
+plain=pow(c,d,n)
+print(plain)
+print(hex(plain))
+print(bytearray.from(hex(plain)[2:]).decode())
