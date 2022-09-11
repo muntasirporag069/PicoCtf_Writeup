@@ -1,0 +1,16 @@
+Process:
+First download the two files.
+Command:wget https://mercury.picoctf.net/static/e9dd71b5d11023873b8abe99cdb45551/ltdis.sh
+A bash script file will be saved name"ltdis.sh".
+Command:https://mercury.picoctf.net/static/e9dd71b5d11023873b8abe99cdb45551/static
+A file will be saved name"static".
+Now ,we've to make the bash script file executable.
+Command: chmod +x ltdis.sh
+Now run the "static" file with the "ltdis.sh" file.
+Command:./ltdis static
+After this we will see some more file in our directory
+After cat those file we will get the flag.
+Command:cat static.ltdis.string.static
+Now,look for the flag
+Congrates.You've found the flag.
+The flag is:picoCTF{d15a5m_t34s3r_ae0b3ef2}
