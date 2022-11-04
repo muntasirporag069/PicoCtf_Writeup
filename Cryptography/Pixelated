@@ -1,0 +1,18 @@
+process:
+
+convert the two png into array using python.
+add both of the arrays and save them as image.
+Python code for this process:
+
+from PIL import Image
+import numpy as np
+imagen1=np.array(Image.open('scrambled1.png'))
+imagen2=np.array(Image.open('scrambled2.png'))
+print(imagen1)
+print(imagen2)
+data=imagen1.copy()+imagen2.copy()
+fiximage=Image.fromarray(data)
+image.save('fiximage','PNG')
+
+After running the code we will find a png file with the flag.
+The flag:picoCTF{d562333d}
