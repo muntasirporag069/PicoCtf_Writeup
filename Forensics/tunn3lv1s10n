@@ -1,0 +1,17 @@
+process:
+Download the file.
+command: wget https://mercury.picoctf.net/static/21c07c9dd20cd9f2459a0ae75d99af6e/tunn3l_v1s10n
+Try to find out the type of the file as it is an "Forensics" problem.
+command:file tunn3l_v1s10n
+It'll show error message.So we have to change the hex.
+Now find the hex code using HexEd.it
+Now we are confirm that is a ".bmp" file.
+Change the code by comapring it with another .bmp file.
+Change the "BA DO" to "38 00" and next "BA DO" to "28 00".
+Now we get a png and the png is looklike some cropped image.
+Change the height.Don't change the width.
+Use "exiftool" to find the image height and width.
+Change the value like following:
+Example: Hex of 1000 is "0x3e8" then we have to use this as "E8 03" 
+Change the value and you've found the flag.
+The flag:picoCTF{qu1t3_a_v13w_2020}
