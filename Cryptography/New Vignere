@@ -1,0 +1,70 @@
+Run this script.
+
+import string
+
+LOWERCASE_OFFSET = ord("a")
+ALPHABET = string.ascii_lowercase[:16]
+
+def b16_encode(plain):
+	enc = ""
+	for c in plain:
+		binary = "{0:08b}".format(ord(c))
+		enc += ALPHABET[int(binary[:4], 2)]
+		enc += ALPHABET[int(binary[4:], 2)]
+	return enc
+
+def b16_decode(enc):
+    plain = ""
+    for c1, c2 in zip(enc[0::2], enc[1::2]):
+        n1 = "{0:04b}".format(ALPHABET.index(c1))
+        n2 = "{0:04b}".format(ALPHABET.index(c2))
+        binary = int(n1 + n2, 2)
+        plain += chr(binary)
+    return plain
+
+def unshift(c, k):
+    t1 = ord(c) - LOWERCASE_OFFSET
+    t2 = ord(k) - LOWERCASE_OFFSET
+    return ALPHABET[(t1 - t2) % len(ALPHABET)]
+
+def decrypt(enc, key):
+    dec = ""
+    for i, c in enumerate(enc):
+        dec += unshift(c, key[i % len(key)])
+    return dec
+from itertools import product, zip_longest
+
+FLAG_CHARS = "abcdef0123456789"
+
+encrypted = "bgjpchahecjlodcdbobhjlfadpbhgmbeccbdefmacidbbpgioecobpbkjncfafbe"
+
+good_letters = set(b16_encode("abcdef0123456789"))
+
+for key_len in range(2, 15):
+    print("Testing key length: {}".format(key_len))
+    parts = [None] * key_len
+    for i in range(key_len):
+        parts[i] = encrypted[i::key_len]
+        
+
+    bf = []
+
+    for i, part in enumerate(parts):
+        bf.append([])
+        for key in ALPHABET:
+            decrypted = decrypt(part, key)
+            if all(c in good_letters for c in decrypted):
+                bf[i].append(decrypted)
+            
+    print("")
+
+    if any(len(b) == 0 for b in bf):
+        continue
+
+    for prod in product(*bf):
+        decrypted = ""
+        for zipped in zip_longest(*prod):
+            decrypted += "".join(filter(None, zipped))
+        decoded = b16_decode(decrypted)
+        if all(c in FLAG_CHARS for c in decoded):
+            print(decoded)
