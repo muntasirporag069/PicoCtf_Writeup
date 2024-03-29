@@ -9,3 +9,6 @@ res = [a^b for a,b in zip(ciphertext,key_list)]
 out = ''.join(map(chr,res))
 
 print(out)
+
+
+Replace the last character with "}"
