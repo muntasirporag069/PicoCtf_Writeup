@@ -1,3 +1,23 @@
+import subprocess
+import sys
+
+# Check if pynput is installed
+try:
+    import pynput
+except ImportError:
+    print("pynput is not installed. Installing...")
+    
+    # Install pynput using pip
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "pynput"])
+    
+    # Check again if pynput is now installed
+    try:
+        import pynput
+        print("pynput installed successfully.")
+    except ImportError:
+        print("Failed to install pynput. Please install it manually.")
+        sys.exit(1)
+
 from pynput import keyboard
 
 text = ""
